@@ -85,10 +85,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function DashWithDrawer() {
-    const classes = useStyles();
     return (
         <div>
-            <AwesomePage layout="fab">
+            <AwesomePage title="Data vis app">
             <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum

@@ -120,7 +120,7 @@ export default function DashWithDrawer(props) {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" noWrap>
-                            Mini variant drawer
+                            {props.title}
                         </Typography>
                     </Toolbar>
                 </AppBar>

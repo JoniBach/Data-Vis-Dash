@@ -6,9 +6,9 @@ import StandardNav from './Layout/StandardNav'
 export default function AwesomePage(props) {
     switch (props.layout) {
         case 'fab':
-            return <FabNav>{props.children}</FabNav>
+            return <FabNav {...props}>{props.children}</FabNav>
         case 'pop':
-            return <PopOpenDrawerNav>{props.children}</PopOpenDrawerNav>
-        default: return <StandardNav>{props.children}</StandardNav>
+            return <PopOpenDrawerNav {...props}>{props.children}</PopOpenDrawerNav>
+        default: return <StandardNav {...props}>{props.children}</StandardNav>
     }
 }
