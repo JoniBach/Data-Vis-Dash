@@ -1,10 +1,10 @@
 import './App.css';
-import DashWithDrawer from './pages/DashWithDrawer'
+import MainDashView from './pages/MainDashView'
 
 function App() {
   return (
     <div>
-      <DashWithDrawer />
+      <MainDashView />
     </div>
   );
 }

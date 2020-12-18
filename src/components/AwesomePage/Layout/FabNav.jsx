@@ -1,15 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { Fab } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuContent from './MenuContent'
@@ -31,11 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FabNav(props) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    top: false,
+  const [openDrawer, setOpenDrawer] = React.useState({
     left: false,
-    bottom: false,
-    right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -43,7 +31,7 @@ export default function FabNav(props) {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
+    setOpenDrawer({ ...openDrawer, [anchor]: open });
   };
 
   return (
@@ -55,7 +43,7 @@ export default function FabNav(props) {
       </Fab>
           <SwipeableDrawer
             anchor={anchor}
-            open={state[anchor]}
+            open={openDrawer[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
           >
